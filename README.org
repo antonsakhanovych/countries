@@ -1,7 +1,8 @@
 * Countries
 ** Build and run
 #+begin_src
-
+cargo build --release
+./target/release/countries
 #+end_src
 ** What does it do?
 #+begin_src bash
