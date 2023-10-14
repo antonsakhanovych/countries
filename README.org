@@ -1,0 +1,25 @@
+* Countries
+** Build and run
+#+begin_src
+
+#+end_src
+** What does it do?
+#+begin_src bash
+# In a nutshell, it does this
+curl https://restcountries.com/v3.1/all | jq -r '[.[] | {"name": .["name"].["common"], "code": .["cca2"],"captial": .["capital"].[0], "population": .["population"]}]' > output.json
+# But also downloads files from another api
+#+end_src
+
+*** Format of file countries.txt
+#+begin_src text
+Flag    Name    Capital Population
+UA      Ukraine Kiev    44134693
+...
+#+end_src
+
+*** Images
+for each country generated in country.txt it also downloads flag {code}.png image
+
+** APIs
+1. https://restcountries.com/v3.1/all for file
+2. https://flagsapi.com/UA/flat/64.png for image retrieval
